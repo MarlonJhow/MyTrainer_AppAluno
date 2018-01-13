@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/navbar_inicio"
+            android:icon="@drawable/ic_inicio"
+            android:title="Inicio" />
+    </group>
+
+    <item android:title="Treinamento">
+        <menu>
+            <item
+                android:id="@+id/navbar_treinos"
+                android:icon="@drawable/ic_treino"
+                android:title="Treinos" />
+            <item
+                android:id="@+id/navbar_alunos"
+                android:icon="@drawable/ic_aluno"
+                android:title="Alunos" />
+        </menu>
+    </item>
+
+    <item android:title="Financeiro">
+        <menu>
+            <item
+                android:id="@+id/navbar_financeiro_cobranca"
+                android:icon="@drawable/ic_financeiro"
+                android:title="Cobranças" />
+            <item
+                android:id="@+id/navbar_financeiro_conta"
+                android:icon="@drawable/ic_account_balance_wallet_black_24dp"
+                android:title="Conta PagSeguro" />
+        </menu>
+    </item>
+    <item android:title="Outros">
+        <menu>
+            <item
+                android:id="@+id/navbar_sair"
+                android:icon="@drawable/ic_exit_to_app_black_24dp"
+                android:title="Sair" />
+        </menu>
+    </item>
+
+</menu>

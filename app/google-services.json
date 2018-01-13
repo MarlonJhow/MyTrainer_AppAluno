@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "1042390420860",
+    "firebase_url": "https://mytrainer-bfa5a.firebaseio.com",
+    "project_id": "mytrainer-bfa5a",
+    "storage_bucket": "mytrainer-bfa5a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1042390420860:android:c68ac870e7a4042a",
+        "android_client_info": {
+          "package_name": "tcc.mytrainer"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1042390420860-f71t4fvgu8usg3uq3ajnvrndiv4qprjc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "tcc.mytrainer",
+            "certificate_hash": "8f6a1e7a780ee90b20231b72a9dd5ff2d0221159"
+          }
+        },
+        {
+          "client_id": "1042390420860-gk5k0duvs5dm0gi09tqphk83u8b99sr6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAE9WFLLFUl6xOAt56UgaDB_2HEew1LTZk"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1042390420860-gk5k0duvs5dm0gi09tqphk83u8b99sr6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
