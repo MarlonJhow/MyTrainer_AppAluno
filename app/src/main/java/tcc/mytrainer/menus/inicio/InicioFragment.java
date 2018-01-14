@@ -63,8 +63,8 @@ public class InicioFragment extends Fragment {
         }
 
         //ATUALIZA COMPONENETES
-        nTreinos.setText(String.valueOf(Session.treinador.getIdTreinos().size()));
-        nAlunos.setText(String.valueOf(Session.treinador.getIdAlunos().size()));
+        nTreinos.setText(String.valueOf(Session.aluno.getIdTreinos().size()));
+        nAlunos.setText(String.valueOf(Session.aluno.getIdTreinadores().size()));
         nPagamentosPendentes.setText(String.valueOf(pagamentosPendentes));
         nValorReceber.setText(String.format("%.2f", valorReceber));
     }

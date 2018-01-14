@@ -27,8 +27,6 @@ public class CobrancaDTO {
     }
 
     public CobrancaDTO(Cobranca cobranca) {
-        this.fotoAlunoUrl = Session.alunos.get(cobranca.getIdAluno()).getFotoUrl();
-        this.nomeAluno = Session.alunos.get(cobranca.getIdAluno()).getNome();
         this.valor = cobranca.getValor();
         this.status = cobranca.getStatus();
         this.vencimento = cobranca.getVencimento();

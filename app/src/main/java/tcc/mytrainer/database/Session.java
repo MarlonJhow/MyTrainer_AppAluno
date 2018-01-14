@@ -1,8 +1,5 @@
 package tcc.mytrainer.database;
 
-import android.support.annotation.NonNull;
-
-import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.TaskCompletionSource;
 import com.google.firebase.auth.FirebaseAuth;
@@ -37,8 +34,8 @@ public class Session {
     public static DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
 
     //INTETIDADES DO BANCO
-    public static Treinador treinador;
-    public static HashMap<String, Aluno> alunos = new HashMap<String, Aluno>();
+    public static Aluno aluno;
+    public static HashMap<String, Treinador> treinadores = new HashMap<String, Treinador>();
     public static HashMap<String, Cobranca> cobrancas = new HashMap<String, Cobranca>();
     public static HashMap<String, Treino> treinos = new HashMap<String, Treino>();
 
@@ -54,12 +51,12 @@ public class Session {
         //OBTEM ID DO USUARIO DA SESSÃO
         String keyTreinador = StringUtil.formatEmailToId(mAuth.getCurrentUser().getEmail());
         //CRIA ID PARA O NOVO OBJETO TREINO
-        mDatabase.child("Treinador").child(keyTreinador).addValueEventListener(new ValueEventListener() {
+        mDatabase.child("Aluno").child(keyTreinador).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                treinador = dataSnapshot.getValue(Treinador.class);
+                aluno = dataSnapshot.getValue(Aluno.class);
                 //CARREGA ENTIDADES RELACIONADAS A TREINADOR
-                bindAlunos();
+                bindTreinadores();
                 bindCobrancas();
                 bindTreinos();
 
@@ -82,13 +79,13 @@ public class Session {
     }
 
     private static void bindTreinos() {
-        if (treinador != null) {
-            for (String idTreino : treinador.getIdTreinos().values()) {
+        if (aluno != null) {
+            for (String idTreino : aluno.getIdTreinos().values()) {
                 mDatabase.child("Treino").child(idTreino).addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(DataSnapshot dataSnapshot) {
                         Treino treino = dataSnapshot.getValue(Treino.class);
-                        if (treinador.getIdTreinos().containsKey(treino.getId())) {
+                        if (aluno.getIdTreinos().containsKey(treino.getId())) {
                             treinos.put(treino.getId(), treino);
                         }
                     }
@@ -102,15 +99,15 @@ public class Session {
         }
     }
 
-    private static void bindAlunos() {
-        if (treinador != null) {
-            for (String idAluno : treinador.getIdAlunos().values()) {
-                mDatabase.child("Aluno").child(idAluno).addValueEventListener(new ValueEventListener() {
+    private static void bindTreinadores() {
+        if (aluno != null) {
+            for (String idTreinador : aluno.getIdTreinadores().values()) {
+                mDatabase.child("Treinador").child(idTreinador).addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(DataSnapshot dataSnapshot) {
-                        Aluno aluno = dataSnapshot.getValue(Aluno.class);
-                        if (treinador.getIdAlunos().containsKey(aluno.getId())) {
-                            alunos.put(aluno.getId(), aluno);
+                        Treinador treinador = dataSnapshot.getValue(Treinador.class);
+                        if (aluno.getIdTreinadores().containsKey(treinador.getId())) {
+                            treinadores.put(treinador.getId(), treinador);
                         }
                     }
 
@@ -124,13 +121,13 @@ public class Session {
     }
 
     private static void bindCobrancas() {
-        if (treinador != null) {
-            for (String idCobranca : treinador.getIdCobrancas().values()) {
+        if (aluno != null) {
+            for (String idCobranca : aluno.getIdCobrancas().values()) {
                 mDatabase.child("Cobranca").child(idCobranca).addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(DataSnapshot dataSnapshot) {
                         Cobranca cobranca = dataSnapshot.getValue(Cobranca.class);
-                        if (treinador.getIdCobrancas().containsKey(cobranca.getId())) {
+                        if (aluno.getIdCobrancas().containsKey(cobranca.getId())) {
                             cobrancas.put(cobranca.getId(), cobranca);
                         }
                     }

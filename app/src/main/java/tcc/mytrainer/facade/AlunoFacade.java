@@ -11,14 +11,6 @@ import tcc.mytrainer.model.Treinador;
 
 public class AlunoFacade {
 
-    public static void vincularAluno(Aluno aluno) {
-        Treinador treinador = Session.treinador;
-
-        //UPDATE TREINADOR FK COBRANCA
-        Session.mDatabase.child("Treinador").child(treinador.getId()).child("idAlunos").child(aluno.getId()).setValue(aluno.getId());
-        Session.mDatabase.child("Aluno").child(aluno.getId()).child("idTreinadores").child(treinador.getId()).setValue(treinador.getId());
-    }
-
     public static void saveOrUpdate(Aluno aluno){
         Session.mDatabase.child("Aluno").child(aluno.getId()).setValue(aluno);
     }

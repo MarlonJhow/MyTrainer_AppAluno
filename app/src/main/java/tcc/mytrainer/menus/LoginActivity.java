@@ -39,6 +39,7 @@ import java.util.List;
 
 import tcc.mytrainer.R;
 import tcc.mytrainer.database.Session;
+import tcc.mytrainer.model.Aluno;
 import tcc.mytrainer.model.Treinador;
 import tcc.mytrainer.util.StringUtil;
 
@@ -245,10 +246,11 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         Log.d(TAG, "createUserWithEmail:onComplete:" + task.isSuccessful());
 
-                        Treinador newTreinador = new Treinador(email);
+                        Aluno aluno = new Aluno();
                         String id = StringUtil.formatEmailToId(email);
-                        newTreinador.setId(id);
-                        Session.mDatabase.child("Treinador").child(id).setValue(newTreinador);
+                        aluno.setEmail(email);
+                        aluno.setId(id);
+                        Session.mDatabase.child("Aluno").child(id).setValue(aluno);
                         finishLogin();
                     }
                 });
