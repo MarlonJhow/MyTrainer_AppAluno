@@ -1,10 +1,12 @@
 package tcc.mytrainer.menus.cobranca;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -14,6 +16,7 @@ import android.view.ViewGroup;
 
 import tcc.mytrainer.R;
 import tcc.mytrainer.database.Session;
+import tcc.mytrainer.menus.treinos.CadastroTreinoActivity;
 
 /**
  * Created by Marlon on 15/09/2017.
@@ -69,7 +72,24 @@ public class CobrancaFragment extends Fragment implements CobrancaAdapter.Listen
     }
 
     @Override
-    public void callback(String idCobranca) {
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
 
+
+        if (resultCode == Activity.RESULT_OK) {
+//            View view = findViewById(R.id.layoutPagamento);
+            Snackbar bar = Snackbar.make(view, "Pagamento realizado com Sucesso!", Snackbar.LENGTH_LONG);
+            Snackbar.SnackbarLayout snack_view = (Snackbar.SnackbarLayout) bar.getView();
+            bar.show();
+        }
+
+    }
+
+    @Override
+    public void callback(String idCobranca) {
+        //PEGA O ID DO TREINO
+        Intent intent = new Intent(context, CadastroCobrancaActivity.class);
+        intent.putExtra("ID_COBRANCA", idCobranca);
+        startActivity(intent);
     }
 }

@@ -11,4 +11,11 @@ import tcc.mytrainer.model.Treinador;
 public class CobrancaFacade {
 
 
+    public static void saveOrUpdate(Cobranca cobranca) {
+        if(cobranca.getId() == null){
+            cobranca.setId(Session.getId());
+        }
+        Session.cobrancas.put(cobranca.getId(), cobranca);
+        Session.mDatabase.child("Cobranca").child(cobranca.getId()).setValue(cobranca);
+    }
 }

@@ -37,6 +37,7 @@
             android:label="@string/title_activity_login" />
         <activity android:name=".menus.MainActivity" />
         <activity android:name=".menus.treinos.CadastroTreinoActivity" />
+        <activity android:name=".menus.cobranca.CadastroCobrancaActivity" />
         <activity android:name=".menus.teste.Teste" />
     </application>
 

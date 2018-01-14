@@ -2,7 +2,6 @@ package tcc.mytrainer.menus.cobranca;
 
 import android.content.Context;
 import android.icu.text.SimpleDateFormat;
-import android.os.Build;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
@@ -14,6 +13,7 @@ import com.squareup.picasso.Picasso;
 import tcc.mytrainer.R;
 import tcc.mytrainer.dto.CobrancaDTO;
 import tcc.mytrainer.enums.Periodo;
+import tcc.mytrainer.enums.Status;
 
 /**
  * Created by Marlon on 14/10/2017.
@@ -27,6 +27,7 @@ class CobrancaHolder extends RecyclerView.ViewHolder {
     private TextView status;
     private TextView vencimento;
     private ImageView recorrente;
+    private ImageView iconPagamento;
     private FloatingActionButton buttonEdit;
 
     public CobrancaHolder(View itemView) {
@@ -39,6 +40,7 @@ class CobrancaHolder extends RecyclerView.ViewHolder {
         vencimento = (TextView) itemView.findViewById(R.id.cobrancaItemCardVencimento);
         recorrente = (ImageView) itemView.findViewById(R.id.cobrancaItemCardRecorrente);
         buttonEdit = (FloatingActionButton) itemView.findViewById(R.id.cobrancaItemCardButtonEdit);
+        iconPagamento = (ImageView) itemView.findViewById(R.id.iconPagamento);
     }
 
     public void update(CobrancaDTO cobranca, Context context) {
@@ -52,6 +54,12 @@ class CobrancaHolder extends RecyclerView.ViewHolder {
             recorrente.setImageResource(R.drawable.ic_repeat_black_24dp);
         } else {
             recorrente.setImageResource(0);
+        }
+
+        if(cobranca.getStatus().equals(Status.PAGO)){
+            buttonEdit.hide();
+            buttonEdit.setEnabled(false);
+            iconPagamento.setImageResource(R.drawable.ic_beenhere_black_24dp);
         }
 
         //TODO Implementar botão

@@ -1,6 +1,7 @@
 package tcc.mytrainer.menus.alunos;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -13,6 +14,8 @@ import android.view.ViewGroup;
 import tcc.mytrainer.R;
 import tcc.mytrainer.database.Session;
 import tcc.mytrainer.dto.TreinadorDTO;
+import tcc.mytrainer.menus.cobranca.CadastroCobrancaActivity;
+import tcc.mytrainer.menus.treinos.CadastroTreinoActivity;
 
 /**
  * Created by Marlon on 28/07/2017.
@@ -52,7 +55,10 @@ public class AlunosFragment extends Fragment implements TreinadorAdapter.OnItemC
     }
 
     @Override
-    public void onItemClick(String idAluno) {
-
+    public void onItemClick(String idCobranca) {
+        //PEGA O ID DO TREINO
+        Intent intent = new Intent(context, CadastroCobrancaActivity.class);
+        intent.putExtra("ID_COBRANCA", idCobranca);
+        startActivity(intent);
     }
 }
