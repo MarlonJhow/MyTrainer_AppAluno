@@ -23,10 +23,6 @@
                 android:icon="@drawable/ic_financeiro"
                 android:title="Cobranças" />
             <item
-                android:id="@+id/navbar_financeiro_conta"
-                android:icon="@drawable/ic_account_balance_wallet_black_24dp"
-                android:title="Conta PagSeguro" />
-            <item
                 android:id="@+id/navbar_sair"
                 android:icon="@drawable/ic_exit_to_app_black_24dp"
                 android:title="Sair" />
