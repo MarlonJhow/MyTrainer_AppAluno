@@ -8,21 +8,16 @@
             android:title="Inicio" />
     </group>
 
-    <item android:title="Treinamento">
+    <item android:title="Menu">
         <menu>
             <item
                 android:id="@+id/navbar_treinos"
                 android:icon="@drawable/ic_treino"
                 android:title="Treinos" />
             <item
-                android:id="@+id/navbar_alunos"
+                android:id="@+id/navbar_treinador"
                 android:icon="@drawable/ic_aluno"
-                android:title="Alunos" />
-        </menu>
-    </item>
-
-    <item android:title="Financeiro">
-        <menu>
+                android:title="Treinador" />
             <item
                 android:id="@+id/navbar_financeiro_cobranca"
                 android:icon="@drawable/ic_financeiro"
@@ -31,10 +26,6 @@
                 android:id="@+id/navbar_financeiro_conta"
                 android:icon="@drawable/ic_account_balance_wallet_black_24dp"
                 android:title="Conta PagSeguro" />
-        </menu>
-    </item>
-    <item android:title="Outros">
-        <menu>
             <item
                 android:id="@+id/navbar_sair"
                 android:icon="@drawable/ic_exit_to_app_black_24dp"

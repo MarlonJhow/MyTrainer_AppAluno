@@ -1,49 +1,54 @@
 package tcc.mytrainer.dto;
 
-import android.graphics.Bitmap;
-import android.os.AsyncTask;
-
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 import tcc.mytrainer.model.Aluno;
-import tcc.mytrainer.util.DownloadImageTask;
+import tcc.mytrainer.model.Treinador;
 
 /**
  * Created by Marlon on 15/09/2017.
  */
 
-public class AlunoDTO {
+public class TreinadorDTO {
     private String id;
     private String nome;
     private String email;
     private String foto;
 
 
-    public AlunoDTO() {
+    public TreinadorDTO() {
     }
 
-    public AlunoDTO(Aluno aluno){
+    public TreinadorDTO(Aluno aluno){
         this.id = aluno.getId();
         this.nome = aluno.getNome();
         this.email = aluno.getEmail();
         this.foto = aluno.getFotoUrl();
     }
 
-    public AlunoDTO(String nome, String email, String foto) {
+    public TreinadorDTO(String nome, String email, String foto) {
         this.nome = nome;
         this.email = email;
         this.foto = foto;
     }
 
-    public static List<AlunoDTO> toList(List<Aluno> alunos){
-        List<AlunoDTO> alunoDTOList =  new ArrayList<>();
+    public TreinadorDTO(Treinador aluno) {
+        this.id = aluno.getId();
+        this.nome = aluno.getNome();
+        this.email = aluno.getEmail();
+        this.foto = aluno.getFotoUrl();
+    }
+
+    public static List<TreinadorDTO> toList(List<Aluno> alunos){
+        List<TreinadorDTO> treinadorDTOList =  new ArrayList<>();
 
         for(Aluno aluno : alunos){
-            alunoDTOList.add(new AlunoDTO(aluno));
+            treinadorDTOList.add(new TreinadorDTO(aluno));
         }
 
-        return alunoDTOList;
+        return treinadorDTOList;
     }
 
     public String getNome() {
@@ -76,5 +81,13 @@ public class AlunoDTO {
 
     public void setId(String id) {
         this.id = id;
+    }
+
+    public static List<TreinadorDTO> toList(Collection<Treinador> values) {
+        ArrayList<TreinadorDTO> dtos = new ArrayList<>();
+        for(Treinador t : values){
+            dtos.add(new TreinadorDTO(t));
+        }
+        return dtos;
     }
 }

@@ -43,30 +43,10 @@
                     android:layout_weight="1"
                     android:background="@android:drawable/screen_background_dark_transparent"
                     android:padding="10dp"
-                    android:text="Cobranças"
+                    android:text="Treinadores"
                     android:textAppearance="@style/TextAppearance.AppCompat.Headline"
                     android:textColor="@color/cardview_light_background"
                     android:textStyle="bold" />
-
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="51dp">
-
-                <android.support.design.widget.FloatingActionButton
-                    android:id="@+id/buttonAddAluno"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:layout_centerVertical="true"
-                    android:layout_margin="5dp"
-                    android:layout_marginEnd="14dp"
-                    android:clickable="true"
-                    app:backgroundTint="@color/empty"
-                    app:elevation="0dp"
-                    app:fabSize="mini"
-                    app:srcCompat="@drawable/ic_search_black_24dp" />
 
             </RelativeLayout>
 

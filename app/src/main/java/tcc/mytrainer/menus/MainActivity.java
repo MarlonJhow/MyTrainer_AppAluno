@@ -15,6 +15,8 @@ import com.google.firebase.auth.FirebaseUser;
 
 import tcc.mytrainer.R;
 import tcc.mytrainer.database.Session;
+import tcc.mytrainer.menus.alunos.AlunosFragment;
+import tcc.mytrainer.menus.cobranca.CobrancaFragment;
 import tcc.mytrainer.menus.inicio.InicioFragment;
 import tcc.mytrainer.menus.treinos.TreinosFragment;
 
@@ -113,6 +115,10 @@ public class MainActivity extends AppCompatActivity
             getSupportFragmentManager().beginTransaction().replace(R.id.frame_fragment, new InicioFragment()).commit();
         } else if (id == R.id.navbar_treinos) {
             getSupportFragmentManager().beginTransaction().replace(R.id.frame_fragment, new TreinosFragment()).commit();
+        } else if (id == R.id.navbar_treinador) {
+            getSupportFragmentManager().beginTransaction().replace(R.id.frame_fragment, new AlunosFragment()).commit();
+        } else if (id == R.id.navbar_financeiro_cobranca) {
+            getSupportFragmentManager().beginTransaction().replace(R.id.frame_fragment, new CobrancaFragment()).commit();
         } else if (id == R.id.navbar_sair) {
             Session.mAuth.signOut();
             startActivity(new Intent(this, LoginActivity.class));

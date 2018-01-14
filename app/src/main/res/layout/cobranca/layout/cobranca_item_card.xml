@@ -139,7 +139,7 @@
                 app:backgroundTint="@color/empty"
                 app:elevation="0dp"
                 app:fabSize="mini"
-                app:srcCompat="@drawable/ic_more_vert_black_24dp" />
+                app:srcCompat="@drawable/ic_credit_card_black_24dp" />
         </LinearLayout>
 
     </LinearLayout>

@@ -23,6 +23,7 @@ android {
             res.srcDirs =
                     [
                             'src/main/res/layout/cobranca',
+                            'src/main/res/layout/alunos',
                             'src/main/res/layout/treinadores',
                             'src/main/res/layout/treino',
                             'src/main/res/layout/pagseguro',

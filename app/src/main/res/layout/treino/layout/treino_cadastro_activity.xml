@@ -41,7 +41,7 @@
                     android:layout_weight="1"
                     android:background="@android:drawable/screen_background_dark_transparent"
                     android:padding="10dp"
-                    android:text="Cadastro de Treinos"
+                    android:text="Treino em Andamento"
                     android:textAppearance="@style/TextAppearance.AppCompat.Headline"
                     android:textColor="@color/cardview_light_background"
                     android:textStyle="bold" />
